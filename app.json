@@ -17,6 +17,11 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -37,8 +42,9 @@
     "experiments": {
       "typedRoutes": true
     }
-    
+
   }
+
 }
 
 
