@@ -11,7 +11,8 @@ export default function LoadingScreen() {
   useEffect(() => {
     // Create animation sequence
     const animate = () => {
-      // Reset values
+    
+  // Reset all dots to 0 at the start of each animation cycle
       dot1.setValue(0);
       dot2.setValue(0);
       dot3.setValue(0);
@@ -41,6 +42,28 @@ export default function LoadingScreen() {
           toValue: 1,
           duration: 400,
           easing: Easing.ease,
+          useNativeDriver: true,
+        }),
+        
+        Animated.delay(1000), // Delay for 1 second after animation completion
+        Animated.timing(dot1, {
+          toValue: 0,
+          duration: 0, // Instant reset
+          useNativeDriver: true,
+        }),
+        Animated.timing(dot2, {
+          toValue: 0,
+          duration: 0, // Instant reset
+          useNativeDriver: true,
+        }),
+        Animated.timing(dot3, {
+          toValue: 0,
+          duration: 0, // Instant reset
+          useNativeDriver: true,
+        }),
+        Animated.timing(dot4, {
+          toValue: 0,
+          duration: 0, // Instant reset
           useNativeDriver: true,
         }),
       ]).start(() => {

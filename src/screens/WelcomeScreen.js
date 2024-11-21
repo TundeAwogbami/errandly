@@ -53,7 +53,7 @@ export default function WelcomeScreen() {
           {/* Google Button */}
           <TouchableOpacity style={styles.socialButton}>
             <Image
-              source={require('../../assets/google-icon.png')}
+              source={require('../../assets/images/google-icon.png')}
               style={styles.socialIcon}
             />
             <Text style={styles.socialButtonText}>Google</Text>
@@ -62,7 +62,7 @@ export default function WelcomeScreen() {
           {/* Facebook Button */}
           <TouchableOpacity style={styles.socialButton}>
             <Image
-              source={require('../../assets/facebook-icon.png')}
+              source={require('../../assets/images/facebook-icon.png')}
               style={styles.socialIcon}
             />
             <Text style={styles.socialButtonText}>Facebook</Text>

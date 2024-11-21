@@ -114,7 +114,7 @@ export default function TrackOrderScreen() {
         {/* Driver Info */}
         <View style={styles.driverContainer}>
           <Image
-            source={require('../../assets/driver-avatar.jpg')}
+            source={require('../../assets/images/driver-avatar.jpg')}
             style={styles.driverAvatar}
           />
           <View style={styles.driverInfo}>
