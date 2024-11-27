@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Animated, Easing, StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LoadingScreen() {
   // Create animated values for each dot
@@ -8,17 +9,19 @@ export default function LoadingScreen() {
   const dot3 = new Animated.Value(0);
   const dot4 = new Animated.Value(0);
 
+  const navigation = useNavigation(); // Hook for navigation
+
   useEffect(() => {
     // Create animation sequence
     const animate = () => {
-    
-  // Reset all dots to 0 at the start of each animation cycle
+
+      // Reset all dots to 0 at the start of each animation cycle
       dot1.setValue(0);
       dot2.setValue(0);
       dot3.setValue(0);
       dot4.setValue(0);
 
-      // Create animation sequence
+      // Create animation sequence for each dot, with different durations and easing functions
       Animated.sequence([
         Animated.timing(dot1, {
           toValue: 1,
@@ -46,34 +49,15 @@ export default function LoadingScreen() {
         }),
         
         Animated.delay(1000), // Delay for 1 second after animation completion
-        Animated.timing(dot1, {
-          toValue: 0,
-          duration: 0, // Instant reset
-          useNativeDriver: true,
-        }),
-        Animated.timing(dot2, {
-          toValue: 0,
-          duration: 0, // Instant reset
-          useNativeDriver: true,
-        }),
-        Animated.timing(dot3, {
-          toValue: 0,
-          duration: 0, // Instant reset
-          useNativeDriver: true,
-        }),
-        Animated.timing(dot4, {
-          toValue: 0,
-          duration: 0, // Instant reset
-          useNativeDriver: true,
-        }),
+
       ]).start(() => {
-        // Repeat animation
-        animate();
+        // Navigate to the next screen after the animation completes
+        navigation.replace('SplashScreen'); // Replace the current screen with the next one
       });
     };
 
     animate();
-  }, []);
+  }, [navigation]);
 
   // Animation interpolation for each dot
   const opacityDot1 = dot1.interpolate({
