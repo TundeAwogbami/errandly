@@ -2,20 +2,18 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, Animated, Easing, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function LoadingScreen() {
+export default function LoadingScreen({ navigation }) {
   // Create animated values for each dot
   const dot1 = new Animated.Value(0);
   const dot2 = new Animated.Value(0);
   const dot3 = new Animated.Value(0);
   const dot4 = new Animated.Value(0);
 
-  const navigation = useNavigation(); // Hook for navigation
-
   useEffect(() => {
     // Create animation sequence
     const animate = () => {
-
-      // Reset all dots to 0 at the start of each animation cycle
+    
+  // Reset all dots to 0 at the start of each animation cycle
       dot1.setValue(0);
       dot2.setValue(0);
       dot3.setValue(0);
@@ -47,7 +45,7 @@ export default function LoadingScreen() {
           easing: Easing.ease,
           useNativeDriver: true,
         }),
-        
+
         Animated.delay(1000), // Delay for 1 second after animation completion
 
       ]).start(() => {
