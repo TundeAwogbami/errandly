@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-export default function SplashScreen() {
-  const navigation = useNavigation();
+export default function SplashScreen({navigation}) {
+  // const navigation = useNavigation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('SignupScreen');
+      navigation.replace('Signup');
     }, 2000); // Navigate to SignupScreen after 2 seconds
 
     return () => clearTimeout(timer);
