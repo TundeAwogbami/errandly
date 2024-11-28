@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StatusBar, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 export default function SplashScreen() {
   const navigation = useNavigation();
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: LOGO_SIZE,
-    height: LOGO_SIZE,
+    width: 200,
+    height: 200,
   },
 });
