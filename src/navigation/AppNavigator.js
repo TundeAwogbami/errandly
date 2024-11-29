@@ -1,21 +1,50 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from '../screens/HomeScreen';
-// Import other screens as you create them
+import { createStackNavigator } from '@react-navigation/stack';
+import LoadingScreen from '../src/screens/LoadingScreen';
+import SplashScreen from '../src/screens/SplashScreen';
+import WelcomeScreen from '../src/screens/WelcomeScreen';
+import SignupScreen from '../src/screens/SignupScreen';
+import CreateOrderScreen from '../src/screens/CreateOrderScreen';
+import TrackOrderScreen from '../src/screens/TrackOrderScreen';
 
 const Stack = createStackNavigator();
 
-function AppNavigator() {
+export default function AppNavigator() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        {/* Add other screens here */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="Loading">
+      <Stack.Screen 
+        name="Loading" 
+        component={LoadingScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="SplashScreen" 
+        component={SplashScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="Welcome" 
+        component={WelcomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="Signup" 
+        component={SignupScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="CreateOrder" 
+        component={CreateOrderScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="TrackOrder" 
+        component={TrackOrderScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+    
   );
 }
 
-export default AppNavigator;

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image, StatusBar, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 export default function SplashScreen({navigation}) {
@@ -7,8 +7,8 @@ export default function SplashScreen({navigation}) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Signup');
-    }, 2000); // Navigate to SignupScreen after 2 seconds
+      navigation.replace('Welcome');
+    }, 5000); // Navigate to WelcomeScreen after 5 seconds
 
     return () => clearTimeout(timer);
   }, [navigation]);
@@ -37,12 +37,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-<<<<<<< HEAD
     width: 200,
     height: 200,
-=======
-    width: "200px",
-    height: "200px",
->>>>>>> bccefae217d5b32f1e65d2c17e70ee0225dc28ca
+    marginBottom: 20,
   },
 });

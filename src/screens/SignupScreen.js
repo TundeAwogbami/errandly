@@ -38,14 +38,6 @@ export default function SignupScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#000000" />
-      
-      {/* Back Button */}
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <Text style={styles.backButtonText}>←</Text>
-      </TouchableOpacity>
 
       <ScrollView 
         style={styles.scrollView}
@@ -145,8 +137,7 @@ export default function SignupScreen() {
           {/* Continue Button */}
           <TouchableOpacity 
             style={styles.continueButton}
-            onPress={handleSubmit}
-          >
+            onPress={() => navigation.navigate('CreateOrder')}> 
             <Text style={styles.continueButtonText}>Continue</Text>
           </TouchableOpacity>
         </View>

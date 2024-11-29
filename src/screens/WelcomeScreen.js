@@ -16,14 +16,6 @@ export default function WelcomeScreen() {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#000000" />
       
-      {/* Back Button */}
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <Text style={styles.backButtonText}>←</Text>
-      </TouchableOpacity>
-
       {/* Main Content */}
       <View style={styles.content}>
         <Text style={styles.title}>Welcome</Text>
@@ -31,7 +23,7 @@ export default function WelcomeScreen() {
         {/* Sign Up Button */}
         <TouchableOpacity 
           style={styles.signUpButton}
-          onPress={() => navigation.navigate('Signup')}
+          onPress={() => navigation.navigate('SignupScreen')}
         >
           <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
