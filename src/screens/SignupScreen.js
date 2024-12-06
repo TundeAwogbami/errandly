@@ -141,6 +141,15 @@ export default function SignupScreen() {
             <Text style={styles.continueButtonText}>Continue</Text>
           </TouchableOpacity>
         </View>
+
+        {/* Back Button */}
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.backButtonText}>←</Text>
+      </TouchableOpacity>
+      
       </ScrollView>
     </View>
   );

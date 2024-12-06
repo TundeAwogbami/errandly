@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
         {/* Sign Up Button */}
         <TouchableOpacity 
           style={styles.signUpButton}
-          onPress={() => navigation.navigate('SignupScreen')}
+          onPress={() => navigation.navigate('Signup')}
         >
           <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
@@ -77,22 +77,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
-  },
-  backButton: {
-    position: 'absolute',
-    top: 40,
-    left: 20,
-    zIndex: 1,
-    width: 40,
-    height: 40,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  backButtonText: {
-    fontSize: 24,
-    color: '#000000',
   },
   content: {
     flex: 1,

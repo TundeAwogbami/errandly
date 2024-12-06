@@ -10,6 +10,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { MapPin } from 'lucide-react-native';
+import TrackOrderScreen from './TrackOrderScreen';
 
 const { width, height } = Dimensions.get('window');
 
@@ -117,7 +118,7 @@ export default function CreateOrderScreen() {
       {/* Create Order Button */}
       <TouchableOpacity 
         style={styles.createOrderButton}
-        onPress={() => {/* Handle order creation */}}
+        onPress={() => {TrackOrderScreen(selectedLocation, dropOffLocation)}}
       >
         <Text style={styles.createOrderText}>Create Order</Text>
       </TouchableOpacity>
